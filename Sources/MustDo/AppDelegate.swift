@@ -1,7 +1,7 @@
 import AppKit
 import Combine
 import SwiftUI
-import StickyMVPCore
+import MustDoCore
 import UniformTypeIdentifiers
 
 @MainActor
@@ -74,8 +74,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         panel.canChooseDirectories = false
         panel.allowsMultipleSelection = false
         panel.directoryURL = store.notesDirectoryURL
-        let stickyType = UTType(filenameExtension: "stickynote")
-        panel.allowedContentTypes = [stickyType, .json].compactMap { $0 }
+        let mustDoType = UTType(filenameExtension: "mustdo")
+        let legacyType = UTType(filenameExtension: "stickynote")
+        panel.allowedContentTypes = [mustDoType, legacyType, .json].compactMap { $0 }
 
         if panel.runModal() == .OK, let url = panel.url {
             do {

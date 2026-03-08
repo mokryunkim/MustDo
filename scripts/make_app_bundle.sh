@@ -5,7 +5,7 @@ ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT_DIR"
 
 APP_NAME="MustDo"
-BIN_NAME="StickyMVP"
+BIN_NAME="MustDo"
 BUNDLE_DIR="$ROOT_DIR/dist/${APP_NAME}.app"
 CONTENTS_DIR="$BUNDLE_DIR/Contents"
 MACOS_DIR="$CONTENTS_DIR/MacOS"

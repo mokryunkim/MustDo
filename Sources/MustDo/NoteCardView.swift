@@ -1,7 +1,7 @@
 import SwiftUI
 import AppKit
 import UniformTypeIdentifiers
-import StickyMVPCore
+import MustDoCore
 
 struct NoteCardView: View {
     @EnvironmentObject private var store: NotesStore
@@ -228,8 +228,9 @@ struct NoteCardView: View {
         panel.canChooseDirectories = false
         panel.allowsMultipleSelection = false
         panel.directoryURL = store.notesDirectoryURL
-        let stickyType = UTType(filenameExtension: "stickynote")
-        panel.allowedContentTypes = [stickyType, .json].compactMap { $0 }
+        let mustDoType = UTType(filenameExtension: "mustdo")
+        let legacyType = UTType(filenameExtension: "stickynote")
+        panel.allowedContentTypes = [mustDoType, legacyType, .json].compactMap { $0 }
 
         if panel.runModal() == .OK, let url = panel.url {
             do {

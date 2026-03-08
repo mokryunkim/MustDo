@@ -4,31 +4,31 @@
 import PackageDescription
 
 let package = Package(
-    name: "StickyMVP",
+    name: "MustDo",
     platforms: [
         .macOS(.v13)
     ],
     products: [
         .library(
-            name: "StickyMVPCore",
-            targets: ["StickyMVPCore"]
+            name: "MustDoCore",
+            targets: ["MustDoCore"]
         ),
         .executable(
-            name: "StickyMVP",
-            targets: ["StickyMVP"]
+            name: "MustDo",
+            targets: ["MustDo"]
         )
     ],
     targets: [
         .target(
-            name: "StickyMVPCore"
+            name: "MustDoCore"
         ),
         .executableTarget(
-            name: "StickyMVP",
-            dependencies: ["StickyMVPCore"]
+            name: "MustDo",
+            dependencies: ["MustDoCore"]
         ),
         .testTarget(
-            name: "StickyMVPTests",
-            dependencies: ["StickyMVPCore"]
+            name: "MustDoTests",
+            dependencies: ["MustDoCore"]
         )
     ]
 )

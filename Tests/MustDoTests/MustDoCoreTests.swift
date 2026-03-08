@@ -1,6 +1,6 @@
 import Testing
 import Foundation
-@testable import StickyMVPCore
+@testable import MustDoCore
 
 @Test func noteDefaultsContainTextStyle() {
     let note = Note()

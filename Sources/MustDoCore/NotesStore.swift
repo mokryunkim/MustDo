@@ -241,7 +241,7 @@ public final class NotesStore: ObservableObject {
         }
 
         let existing = try fileManager.contentsOfDirectory(at: notesDirectoryURL, includingPropertiesForKeys: nil)
-        for url in existing where url.pathExtension == "stickynote" {
+        for url in existing where url.pathExtension == "mustdo" || url.pathExtension == "stickynote" {
             try? fileManager.removeItem(at: url)
         }
 
@@ -254,7 +254,7 @@ public final class NotesStore: ObservableObject {
             }
             let base = sanitizeFilename(note.title)
             let filename = uniqueFilename(base: base, used: &usedNames)
-            let fileURL = notesDirectoryURL.appendingPathComponent(filename).appendingPathExtension("stickynote")
+            let fileURL = notesDirectoryURL.appendingPathComponent(filename).appendingPathExtension("mustdo")
             let data = try encoder.encode(note)
             try data.write(to: fileURL, options: .atomic)
         }

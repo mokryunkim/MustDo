@@ -3,7 +3,7 @@
 ## 로컬 실행
 ```bash
 cd /Users/rina/MustDo
-swift run StickyMVP
+swift run MustDo
 ```
 
 ## 앱 번들 생성
